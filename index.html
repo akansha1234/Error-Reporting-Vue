@@ -29,18 +29,22 @@
                    <p>{{device}}</p>
                 </div>
             </div>
-            <div v-if="this.device!=''" class="col">
-
-            <p>Choose Error Type
-              <select >
+            <div class="col">
+                    
+            <p v-if="this.device!=''" >Choose Error Type
+                
+              <select @change="updateFromSelectedText">
                     <option selected disabled>Errors</option>
                     <option v-for="type in errorTypes">
                            {{type.text}}
                     </option>
               </select>
             </p>
-            </div>
-        
+          
+          <button v-on:click="errorSub"> Submit Error</button>
+            <todo-item></todo-item>
+        </div>
+          
 
         </div>
 
