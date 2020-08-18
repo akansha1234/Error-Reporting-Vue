@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error Entry</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body>
     <div class="container">
 
 
-   
-    <div id="app">
-        
-        <div class="jumbotron">
-            <h3>
-                Error Reporting
-            </h3>
-        </div>
-        <div class="container-fluid">
-            <div class="col">
-                <div class="row">
-                    <p>Name Device : <input  v-model="device"/> </p>
-                </div>
-                <div class="row">
-                   <p>{{device}}</p>
-                </div>
+
+        <div id="app">
+
+            <div class="jumbotron">
+                <h3>
+                    Error Reporting
+                </h3>
             </div>
-            <div class="col">
-                    
-            <p v-if="this.device!=''" >Choose Error Type
-                
-              <select @change="updateFromSelectedText">
-                    <option selected disabled>Errors</option>
-                    <option v-for="type in errorTypes">
-                           {{type.text}}
-                    </option>
-              </select>
-            </p>
-          
-          <button v-on:click="errorSub"> Submit Error</button>
-            <todo-item></todo-item>
-        </div>
-          
+            <div class="container-fluid">
+                <div class="col">
+                    <div class="row">
+                        <p>Name Device : <input v-model="device" /> </p>
+                    </div>
+                    <div class="row">
+                        <p>{{device}}</p>
+                    </div>
+                </div>
+                <div class="col">
+
+                    <p v-if="this.device!=''">Choose Error Type
+
+                        <!--https://stackoverflow.com/questions/44117064/access-selected-text-not-value-of-a-select-element-with-vue-->
+                        <select @change="updateFromSelectedText">
+                            <option selected disabled>Errors</option>
+                            <option v-for="type in errorTypes">
+                                {{type.text}}
+                            </option>
+                        </select>
+                    </p>
+
+                    <button v-on:click="errorSub"> Submit Error</button>
+
+                </div>
+
+
+            </div>
+
 
         </div>
-
-
-      </div>
 
     </div>
-    
+
 </body>
 <script src="vuePage.js"></script>
+
 </html>
