@@ -1,6 +1,10 @@
 const app = new Vue({
     el: '#app',
     data: {
-      device: ''
+      device: '', 
+      errorTypes:[
+        {text:'Bad Battery'}, 
+        {text: 'Screen Crack'}
+      ]
     }
   })

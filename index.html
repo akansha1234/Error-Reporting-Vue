@@ -33,8 +33,8 @@
 
             <p>Choose Error Type
               <select >
-                    <option>
-                            Bad Battery
+                    <option v-for="type in errorTypes">
+                           {{type.text}}
                     </option>
               </select>
             </p>
