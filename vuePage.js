@@ -34,7 +34,7 @@ const app = new Vue({
           this.selectedText = selectedOption.textContent;
           // Holds the currently selected text. 
 
-          return this.selectedText.trim();
+          return this.selectedText;
           // Returns the text for use elsewhere. 
       }
       }
